@@ -1,0 +1,29 @@
+body {
+    background-color: whitesmoke;
+}
+
+header {
+    background-color: #244751;
+    color: #e8fdff;
+}
+
+main {
+    background-color: white;
+    padding: 16px;
+}
+
+.post {
+    margin-bottom: 48px;
+}
+
+.post .user-info img {
+    border-radius: 50%;
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+
+    header {
+        background-color: green;
+    }
+
+}
