@@ -103,4 +103,18 @@ get '/posts/:id' do
   erb(:'posts/show')
 end
 
+post '/likes' do 
+  post_id = params[:post_id]
+  
+  like = Like.new({ post_id: post_id, user_id: current_user.id })
+  like.save
+
+  redirect(back)
+end
+
+delete '/likes/:id' do
+  like = Like.find(params[:id])
+  like.destroy
+  redirect(back)
+end
 
