@@ -1,5 +1,23 @@
 <h2>New Post</h2>
 
+<img id="preview" style="display: none; max-width: 200px" src="">
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#photo_url").on("blur", function(event) {
+            var photo_url = $(this).val();
+            var preview = $("#preview");
+            if (photo_url) {
+                preview.attr("src", photo_url)
+                preview.show();
+            } else {
+                preview.hide();
+            }
+        });
+    });
+</script>
+
 <form action="/posts" method="POST">
   <div class="form-group">
     <label for="photo_url">Photo URL</label>
