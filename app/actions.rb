@@ -1,3 +1,4 @@
+include FileUtils::Verbose
 
 helpers do
   def current_user
@@ -34,6 +35,8 @@ end
 
 post '/signup' do
   #extracting data from the form aka params
+  
+  
   email      = params[:email]
   avatar_url = params[:avatar_url]
   username   = params[:username]
@@ -117,4 +120,16 @@ delete '/likes/:id' do
   like.destroy
   redirect(back)
 end
+
+post '/upload' do
+  file = params[:file]
+  tempfile = params[:file][:tempfile] 
+  filename = params[:file][:filename] 
+  target = "/public/images/"
+
+  # File.open(target, 'wb'){|f| f.write tempfile.read }
+  # "Done"
+  filename
+end
+
 
